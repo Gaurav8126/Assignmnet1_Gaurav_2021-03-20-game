@@ -20,7 +20,7 @@ public class Casino {
         Casino c = new Casino();
         c.computerGuess();
         while ((c.playerGuess != c.computerGuess) && c.round <= 5) {
-            System.out.println("--------GUESS NUMBER--------" + " " + c.round + "\n");
+            System.out.println("GUESS NUMBER" + " " + c.round + "\n");
             c.takeInput();
             c.declareWinner();
             c.round++;
