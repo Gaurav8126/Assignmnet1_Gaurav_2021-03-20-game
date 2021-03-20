@@ -1,0 +1,48 @@
+// Name = Gaurav Dhiman
+// Studennt id = 201905917
+// 20-03-2021
+// Class = IN2203-G2
+// Assignment 1: The Gambling Game
+
+
+
+import java.util.*;
+
+public class Casino {
+
+    public int computerGuess;
+    public int playerGuess;
+    public int round = 1;
+    public static Random random = new Random();
+
+    public static void main(String[] args) {
+
+        Casino c = new Casino();
+        c.computerGuess();
+        while ((c.playerGuess != c.computerGuess) && c.round <= 5) {
+            System.out.println("--------GUESS NUMBER--------" + " " + c.round + "\n");
+            c.takeInput();
+            c.declareWinner();
+            c.round++;
+        }
+
+    }
+
+    public void declareWinner() {
+        if ((playerGuess < computerGuess) && round < 5) {
+            System.out.println("Make a higher guess!\n");
+        }
+        if (playerGuess > computerGuess && round < 5) {
+            System.out.println("Make a lower guess!\n");
+
+        }
+        if (round >= 5 && playerGuess != computerGuess) {
+            System.out.println("Guess limited exhausted. Game Over!");
+            System.out.println("The correct number was: "+computerGuess);
+
+        } else if (round <= 5 && computerGuess == playerGuess) {
+            System.out.println("Yeah! You guessed it in " + round + " attempts");
+
+        }
+
+    }
